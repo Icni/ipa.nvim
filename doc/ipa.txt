@@ -1,0 +1,230 @@
+*ipa.txt*               for NeoVim 0.7-0.11          Last change: 4 October 2025
+*IPA* *ipa* *ipa.nvim*
+
+================================================================================
+CONTENTS                                                          *ipa-contents*
+
+1. Basics                                                           |ipa-basics|
+2. Commands                                                       |ipa-commands|
+3. Keybindings                                                        |ipa-keys|
+
+ipa.nvim is keyboard plugin aimed at making it easier to write using
+the International Phonetic Alphabet (IPA, /aɪpiˈeɪ/). Instead of having to
+type in Unicode code points or copy-paste characters from the internet, you
+can use a series of relatively straightforward keybinds to put IPA characters
+directly into your document. Its keybindings modeled after the IPA (SIL)
+keyboard.
+
+NOTE: It's important that your terminal environment/GUI editor is using a font
+that supports IPA characters (to test if it does, scroll through the list in 
+|ipa-keys|).
+
+================================================================================
+1. Basics                                                           *ipa-basics*
+
+This plugin takes a approach based off of the IPA (SIL) keyboard, (documented
+at https://help.keyman.com/keyboard/sil_ipa/2.0.2/sil_ipa). Generally, there
+is a prefix key -- usually `=`, `<`, or `>` -- which is combined with a letter
+that is close (either in writing or sound) to the desired character to produce
+an IPA character. For example, pressing `=` + `e` produces the character ə
+(the schwa).
+
+(For those used to the IPA (SIL) Keyboard: the reason the non-letter character
+comes first in all of these bindings is to avoid keypress delays for all of
+the letters of the alphabet, which would be very annoying if you wanted to do
+any sort of writing in the same file as your IPA, which tends to be the case.)
+
+To enable the functionality of the plugin, you must be in "IPA Mode". IPA Mode
+is always buffer-local to avoid keypress delays for some keys that tend to
+very important in programming. NOTE: These delays are present for a buffer in
+which IPA mode has been turned on, even if it was later turned off.
+
+================================================================================
+2. Commands                                                       *ipa-commands*
+
+There are three commands that control IPA Mode:
+
+						*:EnterIPA*
+:EnterIPA
+		Enters IPA Mode. If this is the first call to |:EnterIPA|,
+		then all the keybinds are set up.
+
+						*:ExitIPA*
+:ExitIPA
+		Exits IPA Mode. All keybinds remain setup, although they have
+		no effect.
+
+						*:ToggleIPA*
+:ToggleIPA
+		If IPA Mode is turned off, this calls |:EnterIPA|.
+		If it's turned off, this calls |:ExitIPA|.
+
+================================================================================
+3. Keybindings                                                        *ipa-keys*
+
+Here is a comprehensive list of all the mappings offered by this plugin:
+
+Keys	Character ~
+`=a`	ɑ
+`<a`	æ
+`>a`	ɐ
+`=b`	β
+`>b`	ɓ
+`=B`	ʙ
+`=c`	ç
+`<c`	ɕ
+`=d`	ð
+`<d`	ɖ
+`>d`	ɗ
+`=e`	ə
+`<e`	ɛ
+`>e`	ɜ
+`^=e`	ᵊ
+`|e`	ʚ
+`=E`	ɘ
+`<E`	ɶ
+`=f`	ɸ
+`=g`	ɣ
+`<g`	ɡ
+`>g`	ɠ
+`^=g`	ˠ
+`=G`	ɢ
+`>G`	ʛ
+`=h`	ɥ
+`<h`	ɦ
+`>h`	ħ
+`^h`	ʰ
+`>H`	ɧ
+`=i`	ɪ
+`|i`	ɩ
+`=I`	ɨ
+`=j`	ɟ
+`<j`	ʝ
+`>j`	ʄ
+`^j`	ʲ
+`=l`	ɬ
+`<l`	ɭ
+`>l`	ɮ
+`~l`	ɫ
+`^l`	ˡ
+`=L`	ʟ
+`<L`	ʎ
+`>L`	ɺ
+`>m`	ɱ
+`=n`	ɲ
+`<n`	ɳ
+`>n`	ŋ
+`^n`	ⁿ
+`=N`	ɴ
+`=o`	ɒ
+`<o`	ɔ
+`>o`	ø
+`=O`	ɵ
+`<O`	ɞ
+`>O`	ɤ
+`=p`	ʘ
+`=Q`	ʡ
+`<Q`	ʢ
+`=r`	ɹ
+`<r`	ɽ
+`>r`	ɾ
+`=R`	ʀ
+`<R`	ɻ
+`>R`	ʁ
+`^>R`	ʶ
+`=s`	ʃ
+`<s`	ʂ
+`=t`	θ
+`=u`	ɯ
+`<u`	ʊ
+`>u`	ʌ
+`|u`	ɷ
+`=U`	ʉ
+`=v`	ʋ
+`<v`	ⱱ
+`^=v`	ᶹ
+`=w`	ʍ
+`>w`	ɰ
+`^w`	ʷ
+`=x`	χ
+`^x`	ˣ
+`=y`	ʏ
+`<y`	ɥ
+`^y`	ʸ
+`=Y`	ʏ
+`=z`	ʒ
+`<z`	ʐ
+`>z`	ʑ
+`=?`	ʔ
+`<?`	ʕ
+`^<?`	ˤ
+`!`	ǃ
+`=!`	ǂ
+`<!`	ǀ
+`>!`	ǁ
+`~`	◌̃ (superscript tilde)
+`@`	◌̊ (over-ring)
+`$`	◌̩ (syllabicity mark)
+`$$`	◌ (subscript arch)
+`$$$`	◌̰ (subscript tilde)
+`%`	◌̥ (under-ring)
+`%%`	◌̬ (subscript wedge)
+`%%%`	◌̤ (subscript umlaut)
+`&@`	 ͜ (bottom tie bar)
+`@0`	◌̏ (double frave accent)
+`@1`	◌̀ (grave accent)
+`@2`	◌̄ (macron)
+`@3`	◌́ (acute accent)
+`@4`	◌̋ (double acute accent)
+`@13`	◌̌ (wedge)
+`@31`	◌̂ (circumflex)
+`@23`	◌᷄ (macron plus acute accent)
+`@12`	◌᷅ (macron plus grave accent)
+`@131`	◌᷈ (grave plus acute plus grave accent)
+`=#`	‿
+`&#`	 ͡ (top tie bar)
+`#>`	ꜛ
+`#>>`	↗
+`#<`	ꜜ
+`#<<`	↘
+`#0`	˩
+`#1`	˨
+`#2`	˧
+`#3`	˦
+`#4`	˥
+`#04`	˩˥
+`#40`	˥˩
+`#24`	˧˥
+`#12`	˩˧
+`#141`	'˨˥˨',
+`*`	◌ (umlaut)
+`**`	◌̽ (over-cross)
+`***`	◌̆ (breve)
+`+`	◌̟ (subscript plus)
+`++`	◌̝ (raising sign)
+`+++`	◌̘ (advancing sign)
+`++++`	◌̹ (subscript right-half ring)
+`_`	◌̠ (under-bar)
+`__`	◌̞ (lowering sign)
+`___`	◌̙ (retracting sign)
+`____`	◌̜ (subscript left-half ring)
+`[[[`	˞
+`]]`	ʼ
+`]]]`	◌̚ (corner)
+`]]]]`	ʻ
+`{`	◌̪ (subscript bridge)
+`{{`	◌̺ (inverted subscript bridge)
+`{{{`	◌̻ (subscript square)
+`{{{{`	◌̼ (subscript seagull)
+`}`	ˈ
+`}}`	ˌ
+`:`	ː
+`::`	ˑ
+`=.`	‖
+`<.`	|
+
+(Not included in this list are characters that can be produced without a
+special keyboard setup, such as the letters a-z.)
+
+================================================================================
+vim:tw=78:ts=8:noet:ft=help:norl:
