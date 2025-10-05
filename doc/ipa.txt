@@ -8,7 +8,7 @@ CONTENTS                                                          *ipa-contents*
 2. Commands                                                       |ipa-commands|
 3. Keybindings                                                        |ipa-keys|
 
-ipa.nvim is keyboard plugin aimed at making it easier to write using
+ipa.nvim is a keyboard plugin aimed at making it easier to write using
 the International Phonetic Alphabet (IPA, /aɪpiˈeɪ/). Instead of having to
 type in Unicode code points or copy-paste characters from the internet, you
 can use a series of relatively straightforward keybinds to put IPA characters
